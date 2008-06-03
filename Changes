@@ -1,0 +1,17 @@
+Revision history for Perl extension Lingua::SA.
+
+0.01  Fri May 23 22:03:22 2008
+	- original version; created by h2xs 1.22 with options
+		-A -X -n Lingua::SA
+
+0.02  Fri May 23 22:10:22 2008
+	- the start version was 0.02
+
+0.03  Mon May 26 2008
+        - added CB as a consonant for Chandra-Bindu (&#2305;)
+
+0.04  Mon Jun  2 2008
+		- introduced catching of some argument errors in vibhakti
+
+0.06  Tue Jun  3 2008
+		- Adeed a few tests and documentation
