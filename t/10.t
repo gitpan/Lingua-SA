@@ -37,7 +37,7 @@ my %vachana = (
 	);
 
 my %vibhakti_of = (
-	'1'		=> "raam + aH", 
+	'1'		=> "rAm + aH", 
 	);
 
 for my $word (keys  %naam){
@@ -49,6 +49,7 @@ for my $word (keys  %naam){
 	is( $computed, $expected, $expected );
 	}
 #########################
+# Input argument errors
 	my $word = 1;
 	eval { 
 		my $computed = vibhakti({naama=>$naam{$word}, linga=>$linga{$word},
@@ -72,6 +73,7 @@ for my $word (keys  %naam){
 	like($EVAL_ERROR,'/Argument vachana/','vachana not passed');
 
 
+#	unsupported "type" errors
 	eval { 
 		my $computed = vibhakti({naam=>"naag", linga=>$linga{$word},
 		vibhakti=>$vibhakti{$word}, vachana=>$vachana{$word}}); 
@@ -92,3 +94,10 @@ for my $word (keys  %naam){
 		vibhakti=>$vibhakti{$word}, vachana=>"arbit_vachana"}); 
 		};
 	like($EVAL_ERROR,'/Invalid vachana/','invalid vachana');
+
+#	Unsupported linga-aakaar error (ending coef not defined)
+	eval { 
+		my $computed = vibhakti({naam=>'ramA', linga=>'napuMsaka',
+		vibhakti=>$vibhakti{$word}, vachana=>$vachana{$word}}); 
+		};
+	like($EVAL_ERROR,'/nouns ending in/','invalid linga-ending');

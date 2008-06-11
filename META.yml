@@ -1,10 +1,10 @@
 --- #YAML:1.0
 name:                Lingua-SA
-version:             0.06
+version:             0.08
 abstract:            Perl extension for the language Sanskrit
 license:             ~
 author:              
-    - Ashish Mahabal <aam@caltech.edu>
+    - Ashish Mahabal <mahabal.ashish@gmail.com>
 generated_by:        ExtUtils::MakeMaker version 6.42
 distribution_type:   module
 requires:     
